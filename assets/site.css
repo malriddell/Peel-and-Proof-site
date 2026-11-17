@@ -1,0 +1,111 @@
+/* Peel & Proof site. Colors, fonts and radii come only from tokens.css (design/tokens.json). */
+
+@font-face { font-family: 'Fraunces'; src: url('fonts/Fraunces_72pt-SemiBold.ttf') format('truetype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url('fonts/Figtree-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url('fonts/Figtree-Medium.ttf') format('truetype'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url('fonts/Figtree-SemiBold.ttf') format('truetype'); font-weight: 600; font-display: swap; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { color-scheme: dark; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-barrel-char);
+  color: var(--color-cream);
+  font: 400 1.0625rem/1.6 var(--font-body);
+  padding-inline: max(20px, env(safe-area-inset-left), env(safe-area-inset-right));
+}
+
+main { flex: 1; width: 100%; max-width: 60rem; margin: 0 auto; padding-block: 1rem 4rem; }
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; margin: 0 0 0.5em; }
+h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin-top: 2.5rem; }
+h3 { font-size: 1.3rem; }
+p { margin: 0 0 1em; }
+
+a { color: var(--color-amber); text-underline-offset: 0.15em; }
+a:hover { color: var(--color-cream); }
+:focus-visible { outline: 3px solid var(--color-amber); outline-offset: 3px; border-radius: 4px; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Header and footer */
+.site-header {
+  width: 100%; max-width: 60rem; margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; justify-content: space-between;
+  padding-block: max(1.25rem, env(safe-area-inset-top)) 1.25rem;
+}
+.wordmark { font: 600 1.4rem var(--font-display); color: var(--color-cream); text-decoration: none; }
+.wordmark span { color: var(--color-amber); }
+.site-header nav { display: flex; gap: 1.25rem; }
+.site-header nav a { color: var(--color-parchment); text-decoration: none; font-weight: 500; padding-block: 0.6rem; }
+.site-header nav a:hover { color: var(--color-cream); }
+
+.site-footer {
+  width: 100%; max-width: 60rem; margin: 0 auto;
+  border-top: 1px solid var(--color-toasted-oak);
+  padding-block: 1.5rem max(2rem, env(safe-area-inset-bottom));
+  color: var(--color-parchment); font-size: 0.9rem;
+}
+.site-footer p { margin: 0 0 0.4em; }
+.site-footer a { color: var(--color-parchment); }
+
+/* Cards */
+.card {
+  background: var(--color-charred-oak);
+  border: 1px solid var(--color-toasted-oak);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.4rem;
+}
+.card p:last-child { margin-bottom: 0; }
+
+/* Home */
+.hero { text-align: center; padding-block: 2.5rem 1rem; }
+.hero .lede { color: var(--color-parchment); font-size: 1.2rem; max-width: 34rem; margin: 0 auto 1.75rem; }
+.hero-glass { width: 120px; height: 120px; margin-bottom: 1rem; }
+
+.glass-liquid { fill: var(--color-amber); }
+.glass-outline { fill: none; stroke: var(--color-cream); stroke-width: 1.5; stroke-linejoin: round; }
+.glass-cube { fill: none; stroke: var(--color-cream); stroke-width: 1.2; }
+.glass-peel { fill: none; stroke: var(--color-amber); stroke-width: 1.6; stroke-linecap: round; }
+
+.button {
+  display: inline-block; min-height: 44px;
+  background: var(--color-amber); color: var(--color-barrel-char);
+  font-weight: 600; text-decoration: none;
+  padding: 0.75rem 1.5rem; border-radius: var(--radius-control);
+}
+.button:hover { color: var(--color-barrel-char); filter: brightness(1.08); }
+.soon { display: inline-block; color: var(--color-parchment); border: 1px solid var(--color-toasted-oak);
+  border-radius: var(--radius-chip); padding: 0.5rem 1.1rem; font-weight: 500; }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin-top: 3rem; }
+.features h3 { color: var(--color-cream); }
+.features p { color: var(--color-parchment); }
+
+.recipes { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+.recipes li { display: flex; gap: 1rem; align-items: flex-start; }
+.recipes .recipe-glass { flex: none; width: 52px; height: 52px; background: var(--color-toasted-oak); border-radius: 14px; }
+.recipes h3 { font-size: 1.15rem; margin-bottom: 0.25em; }
+.recipes p { color: var(--color-parchment); font-size: 0.95rem; margin: 0; }
+.recipes .credit { font-size: 0.85rem; margin-top: 0.35em; }
+
+.price { margin-top: 3rem; }
+.price h2 { margin-top: 0; }
+.price p { color: var(--color-parchment); }
+
+/* Privacy, support */
+.prose { max-width: 42rem; }
+.prose .meta { color: var(--color-parchment); }
+.prose h2 { font-size: 1.5rem; margin-top: 2rem; }
+.prose h3 { font-family: var(--font-body); font-size: 1.05rem; margin-top: 1.5rem; }
+.prose ul { padding-left: 1.25rem; }
+.prose li { margin-bottom: 0.6em; }

@@ -1,0 +1,16 @@
+/* Generated from design/tokens.json by scripts/build_tokens.py. Do not edit. */
+:root {
+  --color-barrel-char: #15100C;
+  --color-charred-oak: #241A13;
+  --color-toasted-oak: #3A2A1E;
+  --color-amber: #D4953A;
+  --color-cherry: #9E2F2A;
+  --color-cream: #F3E7D3;
+  --color-parchment: #B8A58C;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Figtree', system-ui, sans-serif;
+  --radius-chip: 999px;
+  --radius-control: 14px;
+  --radius-card: 16px;
+  --radius-sheet: 44px;
+}
